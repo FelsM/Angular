@@ -1,0 +1,14 @@
+<h1>{{title}}</h1>
+<h2>{{secondtitle}}</h2>
+<table>
+  <thead>
+    <th>user name</th>
+    <th>user sname</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of data">
+      <td>{{obj.name}}</td>
+      <td>{{obj.sname}}</td>
+    </tr>
+  </tbody>
+</table>

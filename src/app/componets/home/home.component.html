@@ -1,0 +1,30 @@
+<h1>{{title}}</h1>
+
+<!-- Input -->
+<app-first [data]="objCollection" [title]="'Users table'" [subtitle]="'users details'"></app-first>
+
+<app-second (inputChanged)="childInputChanged($event)"></app-second>
+
+
+
+<app-repeat [title]="'one'"></app-repeat>
+<app-repeat [title]="'two'"></app-repeat>
+<app-repeat [title]="'three'"></app-repeat>
+<app-repeat [title]="'four'"></app-repeat>
+
+
+
+<p>{{reutrnSomething()}}</p>
+
+<ul>
+  <li *ngFor="let num of collection">
+    {{num}}
+  </li>
+</ul>
+
+
+<ul>
+  <li *ngFor="let obj of objCollection">
+    {{obj.name}}
+  </li>
+</ul>
