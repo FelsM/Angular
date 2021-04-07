@@ -1,0 +1,19 @@
+.active{
+  color: red;
+}
+.inactive{
+  color: grey;
+}
+
+.btn{
+  border: 10px black solid
+}
+.btn-large{
+  width: 200px;
+  height: 100px;
+  line-height: 100px;
+}
+.btn-success{
+  background-color:green;
+  color: white;
+}

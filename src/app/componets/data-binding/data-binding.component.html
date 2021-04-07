@@ -1,0 +1,50 @@
+<!-- One way binding -->
+<h1>{{title}}</h1>
+
+
+<!-- Attribute binding -->
+<!-- 1 map data to the element property -->
+<img src="{{imgUrl}}">
+
+
+<!-- if(imgUrl){ imgUrl}else{''} -->
+<!-- map data to the DOM element property -->
+<img [src]="imgUrl ? imgUrl : ''">
+
+
+<!-- class binding -->
+
+
+
+<div>
+  <input type="checkbox" [(ngModel)]="isUserActive">
+  <!-- in case of 1 class -->
+  <p [class.active]="isUserActive">UserName</p>
+  <!-- class obj -->
+  <button [class]="classObj">Button</button>
+
+  <!-- class array -->
+  <button [class]="classArr"> class arr</button>
+</div>
+
+
+
+<!-- style binding -->
+
+
+<!-- string as property value -->
+<div [style.width]="'100px'" [style.height]="'100px'" [style.border]="'5px red solid'" [style.font-size]="'20px'">
+  text
+</div>
+<!-- number -->
+<div [style.font-size.px]="50" [style.width.px]="100" [style.height.px]="100" [style.border]="'5px red solid'">
+  text
+</div>
+
+
+<div [style]="styleObj"></div>
+
+
+
+<!-- Two way binding -->
+<input type="text" [(ngModel)]="title">
