@@ -1,0 +1,15 @@
+<p>service works!</p>
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <th>name</th>
+    <th>lastname</th>
+    <th>email</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of data">
+      <td>{{obj.first_name}}</td>
+      <td>{{obj.last_name}}</td>
+      <td>{{obj.email}}</td>
+    </tr>
+  </tbody>
+</table>

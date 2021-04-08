@@ -1,0 +1,29 @@
+<table class="table table-bordered table-striped table-hover">
+  <thead>
+    <th>name</th>
+    <th>lastname</th>
+    <th>percent</th>
+    <th>price</th>
+    <th>date</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let obj of data">
+      <td>{{obj.first_name |  uppercase}}</td>
+      <td>{{obj.last_name | lowercase}}</td>
+      <!-- 
+        work with values from 0 to 1
+        {minDigits}.{minDigitsAfter}-{maxDigitsAfter}
+        for rounding '1.0-0'
+      -->
+      <td>{{(obj.percent/100) | percent : '1.1-1'}}</td>
+      <!-- 
+        {minDigits}.{minDigitsAfter}-{maxDigitsAfter}
+        for rounding '1.0-0'
+      -->
+      <td>{{obj.price | number : '1.2-2' : 'en-US' | currency }}</td>
+      <!-- short, medium,long, full, shortDate, mediumDate,longDate, fullDate, shortTime, mediumTime,longTime, fullTime -->
+      <!-- {{value | date : format : timezone : locale}} -->
+      <td>{{obj.date | date:'shortTime'}}</td>
+    </tr>
+  </tbody>
+</table>

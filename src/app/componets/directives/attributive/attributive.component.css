@@ -1,0 +1,9 @@
+.active{
+  color: green;
+}
+.large{
+  font-size: 50px;
+}
+.italic{
+  font-style: italic;
+}

@@ -1,0 +1,119 @@
+<h1>Structural directives</h1>
+
+<!-- ngFor -->
+
+<table [style.border]="'1px black solid'" [style.width]="'100%'" [style.height.px]="500">
+  <thead>
+    <tr>
+      <th>№</th>
+      <th>Value</th>
+      <th>count</th>
+      <th>first</th>
+      <th>last</th>
+      <th>even</th>
+      <th>odd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let num of ngForArr; index as i;count as c; first as f; last as l; even as e; odd as o"
+      [style.background-color]="e ? 'red' : 'yellow'" [style.color]="l ? 'pink' : 'black'">
+      <td>{{i+1}}</td>
+      <td>{{num}}</td>
+      <td>{{c}}</td>
+      <td>{{f}}</td>
+      <td>{{l}}</td>
+      <td>{{e}}</td>
+      <td>{{v}}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- ngIf -->
+<!-- 1 -->
+<input type="checkbox" [(ngModel)]="isUserLoggedIn">
+
+<h1 *ngIf="isUserLoggedIn as flag; else elseBlock">User Logged In ? {{flag}}</h1>
+
+<ng-template #elseBlock>
+  <h1>Please authorize</h1>
+</ng-template>
+
+<!-- 2 -->
+
+<div *ngIf="isUserLoggedIn; then loggedIn else loggedOut">
+
+</div>
+
+<ng-template #loggedIn>
+  <h2>in</h2>
+</ng-template>
+<ng-template #loggedOut>
+  <h2>out</h2>
+</ng-template>
+
+
+<h2>Hello</h2>
+
+<select [(ngModel)]="mode">
+  <option value="1">Single</option>
+  <option value="2">Multiple</option>
+  <option value="3">Combined</option>
+  <option value="4">new value</option>
+</select>
+
+<!-- 1 -->
+
+<ul *ngIf="mode === '1'">
+  <li>i1</li>
+  <li>i2</li>
+  <li>i3</li>
+</ul>
+
+
+<ol *ngIf="mode === '2'">
+  <li>i1</li>
+  <li>i2</li>
+  <li>i3</li>
+</ol>
+
+
+<table *ngIf="mode === '3'">
+  <tr>
+    <td>i1</td>
+    <td>i2</td>
+    <td>i3</td>
+  </tr>
+</table>
+
+<!-- swtich(mode){
+  case :  
+  default:
+} -->
+
+<ng-container [ngSwitch]="mode">
+
+  <ul *ngSwitchCase="'1'">
+    <li>i1</li>
+    <li>i2</li>
+    <li>i3</li>
+  </ul>
+
+
+  <ol *ngSwitchCase="'2'">
+    <li>i1</li>
+    <li>i2</li>
+    <li>i3</li>
+  </ol>
+
+
+  <table *ngSwitchCase="'3'">
+    <tr>
+      <td>i1</td>
+      <td>i2</td>
+      <td>i3</td>
+    </tr>
+  </table>
+
+  <h3 *ngSwitchDefault>No data</h3>
+</ng-container>

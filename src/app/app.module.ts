@@ -11,6 +11,11 @@ import { LifecycleComponent } from './componets/lifecycle/lifecycle.component';
 import { LifecycleChildComponent } from './componets/lifecycle/lifecycle-child/lifecycle-child.component';
 import { DataBindingComponent } from './componets/data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
+import { DirectivesComponent } from './componets/directives/directives.component';
+import { StructuralComponent } from './componets/directives/structural/structural.component';
+import { AttributiveComponent } from './componets/directives/attributive/attributive.component';
+import { PipesComponent } from './componets/pipes/pipes.component';
+import { ServiceComponent } from './componets/service/service.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +27,11 @@ import { FormsModule } from '@angular/forms';
     LifecycleComponent,
     LifecycleChildComponent,
     DataBindingComponent,
+    DirectivesComponent,
+    StructuralComponent,
+    AttributiveComponent,
+    PipesComponent,
+    ServiceComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
