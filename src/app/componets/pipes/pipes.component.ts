@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { DataTransferService } from 'src/app/services/data-transfer.service';
+import { DictionaryService } from 'src/app/services/dictionary.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-pipes',
   templateUrl: './pipes.component.html',
   styleUrls: ['./pipes.component.css'],
+  providers: [DictionaryService],
 })
 export class PipesComponent implements OnInit {
   // data = [
@@ -190,10 +193,14 @@ export class PipesComponent implements OnInit {
   //   },
   // ];
   data: any[] = [];
-  constructor(private storageService: StorageService) {}
+  constructor(
+    private dataTransferService: DataTransferService,
+    private dictionaryService: DictionaryService
+  ) {}
 
   ngOnInit(): void {
-    this.data = this.storageService.read();
-    this.storageService.createByKey('dataBackup', this.data);
+    this.data = this.dataTransferService.read();
+    this.dataTransferService.createByKey('dataBackup', this.data);
+    console.log(this.dictionaryService.data);
   }
 }

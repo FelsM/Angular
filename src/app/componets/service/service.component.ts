@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { DataTransferService } from 'src/app/services/data-transfer.service';
+import { DictionaryService } from 'src/app/services/dictionary.service';
 import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
@@ -191,10 +193,21 @@ export class ServiceComponent implements OnInit {
   // ];
 
   data: any[] = [];
-  constructor(private storageService: StorageService) {}
+  constructor(
+    @Inject('MY_APP_VERSION') private myAppVersion: number,
+    private storageService: DataTransferService,
+    private dictionaryService: DictionaryService
+  ) {
+    // this.storageService = new DataTransferService()
+  }
 
   ngOnInit(): void {
     this.data = this.storageService.read();
     console.log(this.storageService.readByKey('dataBackup'));
+    this.storageService.tranformXml('data');
+    console.log(this.dictionaryService.data);
+    this.dictionaryService.data = 'New data';
+    console.log(this.dictionaryService.data);
+    console.log(this.myAppVersion);
   }
 }
