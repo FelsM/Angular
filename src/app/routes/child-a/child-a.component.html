@@ -1,0 +1,13 @@
+<p>child-a works!</p>
+
+<div *ngFor="let good of goods">
+  <!-- 
+    root - localhost:4200
+    / - from root
+    /route - from root/route
+    ./ - from current current route
+    ../ -   
+  -->
+  <h3><a [routerLink]="['./', good.id]">{{good.name}}</a></h3>
+  <h4>{{good.price | currency}}</h4>
+</div>

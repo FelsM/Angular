@@ -4,8 +4,10 @@ import { DataBindingComponent } from './componets/data-binding/data-binding.comp
 import { DirectivesComponent } from './componets/directives/directives.component';
 import { HomeComponent } from './componets/home/home.component';
 import { LifecycleComponent } from './componets/lifecycle/lifecycle.component';
+import { PageNotFoundComponent } from './componets/page-not-found/page-not-found.component';
 import { PipesComponent } from './componets/pipes/pipes.component';
 import { ServiceComponent } from './componets/service/service.component';
+import { ParentComponent } from './routes/parent/parent.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'directives', component: DirectivesComponent },
   { path: 'pipes', component: PipesComponent },
   { path: 'service', component: ServiceComponent },
+  { path: 'routes', component: ParentComponent },
+  // { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({

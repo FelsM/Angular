@@ -19,6 +19,8 @@ import { ServiceComponent } from './componets/service/service.component';
 import { StorageService } from './services/storage.service';
 import { DataTransferService } from './services/data-transfer.service';
 import { DictionaryService } from './services/dictionary.service';
+import { RoutesModule } from './routes/routes.module';
+import { PageNotFoundComponent } from './componets/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -35,8 +37,9 @@ import { DictionaryService } from './services/dictionary.service';
     AttributiveComponent,
     PipesComponent,
     ServiceComponent,
+    PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, RoutesModule],
   // provider {provide: ServeiceName, useClass | useValue | useExisting | useFactory}
 
   // useValue - to pass spicific value
