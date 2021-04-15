@@ -8,12 +8,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ChildADetailsComponent implements OnInit {
   id: string = '';
-
+  goodInfo = '';
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     // this.route.snapshot.paramMap.get('id')
     this.id = this.route.snapshot.params['id'];
+    console.log(this.route.snapshot.data);
+    this.goodInfo = this.route.snapshot.data[0]['productInfo'];
   }
 
   backToGoods() {

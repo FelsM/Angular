@@ -7,6 +7,7 @@ import { LifecycleComponent } from './componets/lifecycle/lifecycle.component';
 import { PageNotFoundComponent } from './componets/page-not-found/page-not-found.component';
 import { PipesComponent } from './componets/pipes/pipes.component';
 import { ServiceComponent } from './componets/service/service.component';
+import { LoadGuard } from './guards/load.guard';
 import { ParentComponent } from './routes/parent/parent.component';
 
 const routes: Routes = [
@@ -17,7 +18,12 @@ const routes: Routes = [
   { path: 'directives', component: DirectivesComponent },
   { path: 'pipes', component: PipesComponent },
   { path: 'service', component: ServiceComponent },
-  { path: 'routes', component: ParentComponent },
+  {
+    path: 'routes',
+    loadChildren: () =>
+      import('./routes/routes.module').then((m) => m.RoutesModule),
+    canLoad: [LoadGuard],
+  },
   // { path: '**', component: PageNotFoundComponent },
 ];
 
