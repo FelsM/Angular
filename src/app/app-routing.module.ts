@@ -24,6 +24,11 @@ const routes: Routes = [
       import('./routes/routes.module').then((m) => m.RoutesModule),
     canLoad: [LoadGuard],
   },
+  {
+    path: 'data-input',
+    loadChildren: () =>
+      import('./data-input/data-input.module').then((m) => m.DataInputModule),
+  },
   // { path: '**', component: PageNotFoundComponent },
 ];
 

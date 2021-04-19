@@ -1,0 +1,27 @@
+.ng-dirty.ng-valid{
+  border: 3px solid green;
+} 
+.ng-dirty.ng-invalid{
+  border: 3px solid red;
+}
+
+/* smth was putted into the field */
+.ng-dirty{
+  background-color: grey;
+} 
+/* nothing was putted into the field */
+.ng-pristine{
+  background-color: white;
+}
+
+
+/* field was touched */
+.ng-touched{
+  box-shadow: 3px 3px 10px yellow;
+}
+/* field was touched */
+.ng-untouched{
+
+}
+
+

@@ -21,7 +21,6 @@ import { DataTransferService } from './services/data-transfer.service';
 import { DictionaryService } from './services/dictionary.service';
 import { RoutesModule } from './routes/routes.module';
 import { PageNotFoundComponent } from './componets/page-not-found/page-not-found.component';
-
 @NgModule({
   declarations: [
     AppComponent,
