@@ -5,7 +5,7 @@ import { DataInputRoutingModule } from './data-input-routing.module';
 import { DataInputComponent } from './data-input/data-input.component';
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
-import { FormsModule } from '@angular/forms';
+import { FormBuilder, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,6 +13,12 @@ import { FormsModule } from '@angular/forms';
     ModelDrivenComponent,
     TemplateDrivenComponent,
   ],
-  imports: [CommonModule, FormsModule, DataInputRoutingModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    DataInputRoutingModule,
+  ],
+  providers: [FormBuilder],
 })
 export class DataInputModule {}
