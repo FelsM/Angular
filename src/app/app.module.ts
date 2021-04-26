@@ -21,6 +21,8 @@ import { DataTransferService } from './services/data-transfer.service';
 import { DictionaryService } from './services/dictionary.service';
 import { RoutesModule } from './routes/routes.module';
 import { PageNotFoundComponent } from './componets/page-not-found/page-not-found.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ClientServerInterceptor } from './interceptors/client-server.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,13 @@ import { PageNotFoundComponent } from './componets/page-not-found/page-not-found
     ServiceComponent,
     PageNotFoundComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, RoutesModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    RoutesModule,
+    HttpClientModule,
+  ],
   // provider {provide: ServeiceName, useClass | useValue | useExisting | useFactory}
 
   // useValue - to pass spicific value
@@ -56,6 +64,11 @@ import { PageNotFoundComponent } from './componets/page-not-found/page-not-found
       deps: ['MY_APP_VERSION'],
     },
     DictionaryService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ClientServerInterceptor,
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
 })

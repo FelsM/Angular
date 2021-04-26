@@ -29,6 +29,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./data-input/data-input.module').then((m) => m.DataInputModule),
   },
+  {
+    path: 'client-server',
+    loadChildren: () =>
+      import('./client-server/client-server.module').then(
+        (m) => m.ClientServerModule
+      ),
+  },
   // { path: '**', component: PageNotFoundComponent },
 ];
 
