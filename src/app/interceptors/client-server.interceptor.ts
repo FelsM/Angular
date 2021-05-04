@@ -20,6 +20,7 @@ export class ClientServerInterceptor implements HttpInterceptor {
       return next.handle(request);
     } else {
       alert('Check permission');
+      return {} as Observable<HttpEvent<unknown>>;
     }
   }
 }

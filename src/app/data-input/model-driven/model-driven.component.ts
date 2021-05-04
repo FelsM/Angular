@@ -36,6 +36,10 @@ export class ModelDrivenComponent implements OnInit {
     });
 
     this.checkoutForm.patchValue(data);
+
+    this.checkoutForm.valueChanges.pipe().subscribe((value) => {
+      console.log(value);
+    });
     // this.checkoutForm.reset();
   }
 

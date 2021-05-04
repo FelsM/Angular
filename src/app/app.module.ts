@@ -23,6 +23,9 @@ import { RoutesModule } from './routes/routes.module';
 import { PageNotFoundComponent } from './componets/page-not-found/page-not-found.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ClientServerInterceptor } from './interceptors/client-server.interceptor';
+import { ObsComponent } from './componets/obs/obs.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSidenavModule } from '@angular/material/sidenav';
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +42,7 @@ import { ClientServerInterceptor } from './interceptors/client-server.intercepto
     PipesComponent,
     ServiceComponent,
     PageNotFoundComponent,
+    ObsComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,6 +50,8 @@ import { ClientServerInterceptor } from './interceptors/client-server.intercepto
     FormsModule,
     RoutesModule,
     HttpClientModule,
+    BrowserAnimationsModule,
+    MatSidenavModule,
   ],
   // provider {provide: ServeiceName, useClass | useValue | useExisting | useFactory}
 

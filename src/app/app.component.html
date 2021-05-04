@@ -1,17 +1,24 @@
-<nav>
-  <ul>
-    <li>
-      <a routerLink="/home">Home</a>
-    </li>
-    <li><a routerLink="/lifecycle">Lifecycle</a></li>
-    <li><a routerLink="/databinding">databinding</a></li>
-    <li><a routerLink="/directives">directives</a></li>
-    <li><a routerLink="/pipes">pipes</a></li>
-    <li><a routerLink="/service">service</a></li>
-    <li><a routerLink="/routes">routes</a></li>
-    <li><a routerLink="/data-input">Forms</a></li>
-    <li><a routerLink="/client-server">Client-server</a></li>
-  </ul>
-</nav>
-
-<router-outlet></router-outlet>
+<mat-drawer-container class="example-container">
+  <mat-drawer #drawer [mode]="'over'">
+    <nav>
+      <ul>
+        <li>
+          <a routerLink="/home">Home</a>
+        </li>
+        <li><a routerLink="/lifecycle">Lifecycle</a></li>
+        <li><a routerLink="/databinding">databinding</a></li>
+        <li><a routerLink="/directives">directives</a></li>
+        <li><a routerLink="/pipes">pipes</a></li>
+        <li><a routerLink="/service">service</a></li>
+        <li><a routerLink="/routes">routes</a></li>
+        <li><a routerLink="/data-input">Forms</a></li>
+        <li><a routerLink="/client-server">Client-server</a></li>
+        <li><a routerLink="/observable">Observable</a></li>
+      </ul>
+    </nav>
+  </mat-drawer>
+  <mat-drawer-content>
+    <button mat-raised-button (click)="drawer.toggle()">Toggle drawer</button>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
